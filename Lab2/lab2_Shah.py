@@ -5,3 +5,7 @@ Sept 2nd, 2026
 """
 
 print("Welcome to Git commands")
+n = 8
+print(f"Double of {n} is {n*2}")
+
+
