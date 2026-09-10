@@ -36,7 +36,7 @@ if result:
 else:
     print("Match not found")
 
-pattern = r"/d/d/d/d/d" # match any five consecutive digits
+pattern = r"\d" # match any five consecutive digits
 zipcode = "My zip code is = 12345 and my lucky number is 8"
 match = re.search(pattern, zipcode)
 if match:
