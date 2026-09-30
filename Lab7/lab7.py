@@ -26,13 +26,17 @@ nba_teams = get_teams()
 
 print(f"First 2 teams: {nba_teams[:2]}")
 
-# convert list of dictionary into a data frame
+# convert list of dictionary into a DataFrame
 df_teams = pd.DataFrame(nba_teams)
 print(df_teams.head())
 
-# filter the row that contains the "warriors" nickname
-df_warriors=df_teams[df_teams['nickname']==' Warriors']
+# filter the row that contains the "Warriors" nickname
+df_warriors=df_teams[df_teams['nickname'] == 'Warriors']
 print(df_warriors)
+
+# access and save the id, which is the first row first column of warriors
+id_warriors=df_warriors[['id']].values[0][0]
+print(f"Id of Warriors = {id_warriors}")
 
 # ----------------------------
 # 3. Working with external API
@@ -40,7 +44,6 @@ print(df_warriors)
 
 # a. Download the pickle file
 import requests
-
 
 url = "https://s3-api.us-geo.objectstorage.softlayer.net/cf-courses-data/CognitiveClass/PY0101EN/Chapter%205/Labs/Golden_State.pkl"
 
@@ -74,36 +77,48 @@ away_avg_pts = gsw_away_vs_raptors['PTS'].mean()
 
 print(f"Warriors home average {home_avg_plus}")
 print(f"Warriors away average {away_avg_plus}")
-print(f"Warriors home points {home_avg_pts}")
-print(f"Warriors away points {away_avg_pts}")
+print(f"Warriors home points average {home_avg_pts}")
+print(f"Warriors away points average {away_avg_pts}")
 
-# Pick two teams to work on a through b (Liverpool, ManCity)
-# a
+print("\n---------LAB EXERCISE ----------")
+# Pick two teams to work on step a through d. (Liverpool, ManCity)
+# a 
 url2 = "https://datahub.io/core/english-premier-league/r/season-2324.csv"
 file_name2 = "epl_matches.csv"
 
 print("\nDownloading external data...")
-response = requests.get(url)
-if response.status_code == 200:
+response2 = requests.get(url2)
+if response2.status_code == 200:
     with open(file_name2, "wb") as f:
-        f.write(response.content)
+        f.write(response2.content)
     print("Download complete.")
 else:
     print("Download failed.")
 
-# b. Load DataFrame from csv
-games2 = pd.read_csv(file_name)
+# b
+games2 = pd.read_csv(file_name2)
 print("\nGames data from csv file:")
-print(games.head())
+print(games2.head())
+print("\n")
 
-# c. Filter 
-# Liverpool vs ManCity
-warriors_vs_raptors = games[games['MATCHUP'].str.contains('TOR')]
-gsw_home_vs_raptors = warriors_vs_raptors[warriors_vs_raptors['MATCHUP'].str.contains(' vs. ')]
-gsw_away_vs_raptors = warriors_vs_raptors[warriors_vs_raptors['MATCHUP'].str.contains(' @ ')]
+# c
+# Liverpool vs Chelsea
+lvp_home_vs_Chelsea = games2[(games2["HomeTeam"].str.contains("Liverpool")) & (games2["AwayTeam"].str.contains("Chelsea"))]
+lvp_away_vs_Chelsea = games2[(games2["HomeTeam"].str.contains("Chelsea")) & (games2["AwayTeam"].str.contains("Liverpool"))]
 
+# d
+# Liverpool Goals
+home_avg_g = lvp_home_vs_Chelsea['FTHG'].mean()  
+away_avg_g = lvp_away_vs_Chelsea['FTAG'].mean()  
 
+# Chelsea Goals
+home_avg_g2 = lvp_away_vs_Chelsea['FTHG'].mean() 
+away_avg_g2 = lvp_home_vs_Chelsea['FTAG'].mean() 
 
+print(f"Liverpool home goals average: {home_avg_g}")
+print(f"Liverpool away goals average: {away_avg_g}")
+print(f"Chelsea home goals average: {home_avg_g2}")
+print(f"Chelsea away goals average: {away_avg_g2}")
 
 
 
