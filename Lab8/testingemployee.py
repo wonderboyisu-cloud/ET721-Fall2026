@@ -20,7 +20,7 @@ class TestEmployee(unittest.TestCase):
 
         self.assertEqual(self.emp1.salary, 94500)
         
-if __name__ == "_main_":
+if __name__ == "__main__":
     unittest.main()
 
 
