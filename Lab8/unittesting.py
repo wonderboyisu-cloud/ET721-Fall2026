@@ -35,12 +35,12 @@ class TestAddFunction(unittest.TestCase):
 
     def test_valueerror(self):
         self.assertIsNone(dividenumbers(10, "a"))  
-        self.assertIsNone(dividenumbers("a", 10))
+        self.assertIsNone(dividenumbers("a", "peter"))
 
     def test_unexpected_exceptions(self):
         # test other possible errors by mocking
         with self.assertRaises(Exception):
-            # passing None tp trigger an exception
+            # passing None to trigger an exception
             dividenumbers() 
 
 if __name__ == "__main__":
