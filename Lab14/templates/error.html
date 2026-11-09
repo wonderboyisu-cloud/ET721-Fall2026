@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Error</title>
+</head>
+<body>
+    <h1 class="title">Isaam Shah</h1>
+
+    <div class="result error">
+        <h2>Error</h2>
+        <p>{{ message }}</p>
+        <a href="{{ url_for('home') }}">Back to home</a>
+    </div>
+</body>
+</html>

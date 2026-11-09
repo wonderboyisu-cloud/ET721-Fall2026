@@ -59,7 +59,7 @@ function showupdateform(id, name, price) {
 }
 
 // function to update the selected item name or price
-async function updateitem() {
+async function updateItem() {
     const id = document.querySelector('#updateID').value
     const name = document.querySelector('#updateName').value
     const price = document.querySelector('#updatePrice').value
@@ -82,6 +82,8 @@ async function deleteitem(id) {
     {
         method: "DELETE"
     })
+    const html = await res.text()
+   document.body.innerHTML = html
     
 }
 

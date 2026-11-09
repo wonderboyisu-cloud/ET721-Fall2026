@@ -30,9 +30,9 @@ def create_item():
 def get_items():
     return jsonify(items)
 
-# READ, UPDATE, DELETE SINGLE ITEMS
+# READ, UPDATE, DELETE SINGLE ITEM
 @app.route('/items/<item_id>', methods = ['GET', 'PUT', 'DELETE'])
-def handle_items(item_id):
+def handle_item(item_id):
     item = items.get(item_id)
 
     # READ
@@ -57,7 +57,7 @@ def handle_items(item_id):
     # DELETE
     elif request.method == "DELETE":
         deleted_item = items.pop(item_id)
-        return render_template('delete.html', item_id = item_id, deleted_item = data)
+        return render_template('delete.html', item_id = item_id, deleted_item = deleted_item)
 
 if __name__ == "__main__":
     app.run(debug=True)

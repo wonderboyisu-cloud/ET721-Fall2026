@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete Item {{item_id}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Item Deleted</h1>
-    <p>ID: {{item_id}}</p>
-    <p>Deleted Values: {{deleted_item}}</p>
-    <a href="{{url_for('home')}}">Back to home</a>
+    <h1 class="title">Isaam Shah</h1>
+
+    <div class="result">
+        <h1>Item Deleted</h1>
+        <p>ID: {{item_id}}</p>
+        <p>Deleted Values: {{deleted_item}}</p>
+        <a href="{{url_for('home')}}">Back to home</a>
+    </div>
 
 </body>
 </html>

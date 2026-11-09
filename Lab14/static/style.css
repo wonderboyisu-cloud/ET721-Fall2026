@@ -1,0 +1,161 @@
+/* ---------- Base ---------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f0f4f8;
+    color: #1f2933;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+    line-height: 1.5;
+}
+
+/* ---------- Name banner (all pages) ---------- */
+.title {
+    background: #2b6cb0;
+    color: #ffffff;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    margin: 0 0 24px;
+    letter-spacing: 1px;
+}
+
+h2, h3 {
+    color: #2b6cb0;
+}
+
+/* ---------- Create form (index.html) ---------- */
+form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formsession {
+    margin-bottom: 14px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 4px;
+    border: 1px solid #cbd2d9;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 2px rgba(43, 108, 176, 0.25);
+}
+
+/* ---------- Buttons ---------- */
+button {
+    background: #2b6cb0;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #234e82;
+}
+
+/* ---------- Items list (index.html) ---------- */
+.loaditems {
+    margin-top: 24px;
+}
+
+#itemslist {
+    list-style: none;
+    padding: 0;
+}
+
+#itemslist li {
+    background: #ffffff;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border-left: 5px solid #2b6cb0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+#itemslist li button {
+    margin-left: 8px;
+    padding: 4px 10px;
+}
+
+/* Delete button: the second button in each list item */
+#itemslist li button:last-child {
+    background: #c53030;
+}
+
+#itemslist li button:last-child:hover {
+    background: #9b2c2c;
+}
+
+/* ---------- Update section (index.html) ---------- */
+#updatesection {
+    background: #ebf4ff;
+    padding: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+#updatesection label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ---------- Result cards (update.html, delete.html, error.html) ---------- */
+.result {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 5px solid #2f855a;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.result h1,
+.result h2 {
+    margin-top: 0;
+    color: #2f855a;
+}
+
+.result.error {
+    border-top-color: #c53030;
+}
+
+.result.error h2 {
+    color: #c53030;
+}
+
+a {
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #234e82;
+}
+
+/* ---------- Response message ---------- */
+#response {
+    color: #2f855a;
+    font-weight: 600;
+    word-break: break-word;
+}
