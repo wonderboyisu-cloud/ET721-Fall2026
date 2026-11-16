@@ -1,0 +1,39 @@
+*{box-sizing: border-box;}
+
+.maincontainer{
+    width: 900px;
+    margin: 3rem auto;
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
+}
+
+.title{
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+#taskinput{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btaddtask{
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.btaddtask:hover{
+    background-color: crimson;
+    font-weight: bold;
+}
