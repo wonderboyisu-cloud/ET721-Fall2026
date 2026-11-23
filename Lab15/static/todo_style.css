@@ -3,7 +3,7 @@
 .maincontainer{
     width: 900px;
     margin: 3rem auto;
-    background-color: #f4f4f4;
+    background-color: aliceblue;
     padding: 2rem;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -15,7 +15,7 @@
     margin-bottom: 2rem;
 }
 
-#taskinput{
+#taskInput{
     width: 100%;
     padding: 1rem;
     font-size: 1.3rem;
@@ -25,28 +25,32 @@
 
 .btnaddtask{
     width: 100%;
+    border-radius: 5px;
+    margin-top: 2rem;
+    background-color: darkblue;
     padding: 1rem;
     font-size: 1.3rem;
-    background-color: darkblue;
-    color: white;
+    color: aliceblue;
     border: none;
     cursor: pointer;
 }
 
 .btnaddtask:hover{
     background-color: crimson;
-    font-weight: bold;
+    font-weight: bolder;
+    cursor: pointer;
 }
 
 /*Style for task items*/
-.task_item{
+.task-item{
     padding: 1rem;
     background-color: #fff;
     border-bottom: 1px solid #ddd;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    list-style: none;
 }
 
-.tasklist{
+#taskList{
     list-style-type: none;
     padding-left: 0.5rem;
     margin-top: 2rem;
@@ -54,33 +58,17 @@
 }
 
 /*Delete buttons style*/
-.btndeletetask{
+.btn-delete-item{
     float: right;
     color: crimson;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
     background-color: white;
-
 }
 
-.btndeletetask:hover{
+.btn-delete-item:hover{
     filter: opacity(0.6);
     transform: scale(1.1);
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
